@@ -8,6 +8,8 @@ import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { HomeComponent } from './components/home/home.component';
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 
+import { BackendAccessService } from './services/backend-access.service';
+
 import { routes } from './account-routing';
 
 
@@ -17,6 +19,14 @@ import { routes } from './account-routing';
     CommonModule,
     RouterModule.forRoot(routes)
   ],
-  declarations: [SignInComponent, SignUpComponent, HomeComponent, ForgotPasswordComponent]
+  declarations: [
+  	SignInComponent, 
+  	SignUpComponent, 
+  	HomeComponent, 
+  	ForgotPasswordComponent
+  ],
+  providers : [
+    BackendAccessService,
+  ]
 })
 export class AccountModule { }

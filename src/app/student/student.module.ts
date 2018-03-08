@@ -17,14 +17,16 @@ import { routes } from './student-routing';
 @NgModule({
   imports: [
     CommonModule,
+    RouterModule.forRoot(routes)
+  ],
+  declarations: [
+    IndexComponent,
     DocumentsComponent,
     LanguagesComponent,
     NotificationsComponent,
     ProfileComponent,
     PublicationComponent,
-    SearchComponent,
-    RouterModule.forRoot(routes)
-  ],
-  declarations: [IndexComponent]
+    SearchComponent
+  ]
 })
 export class StudentModule { }

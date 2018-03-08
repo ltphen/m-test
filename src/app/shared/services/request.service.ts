@@ -10,26 +10,36 @@ import { ServerInternalError } from "./../common/ErrorsHandler/ServerInternalErr
 import "rxjs/add/operator/catch";
 
 @Injectable()
+
+ /********************************* Global Request sender ***************************************************************************/
 export class RequestService {
 
   constructor(private http:Http) { }
 
+   /********************************* Post request ***************************************************************************/
   post(url, data){
   	return this.http.post(url, data).catch(this.handleError);
   }
+
+ /********************************* Get request ***************************************************************************/
   get(url){
     alert(url);
     return this.http.get(url).catch(this.handleError);
   }
+
+   /********************************* Update request ***************************************************************************/
   update(url, newData){
     return this.http.put(url, newData).catch(this.handleError);
   }
+
+   /********************************* Delete request ***************************************************************************/
   delete(url, newData){
     return this.http.delete(url, newData).catch(this.handleError);
   }
 
+ /********************************* Error handler method ***************************************************************************/
   handleError(error : Response){
-    alert(error);
+    alert("Error" + error);
   	if (error.status == 404) 
   		return Observable.throw(new NotFoundError(error));
   	if (error.status == 400) 

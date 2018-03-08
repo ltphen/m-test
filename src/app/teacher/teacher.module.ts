@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { IndexComponent } from './index/index.component';
 import { RouterModule } from '@angular/router';
 
-
 import { DocumentsComponent } from './components/documents/documents.component';
 import { LanguagesComponent } from './components/languages/languages.component';
 import { NotificationsComponent } from './components/notifications/notifications.component';
@@ -12,19 +11,25 @@ import { PublicationComponent } from './components/publication/publication.compo
 import { SearchComponent } from './components/search/search.component';
 
 import { routes } from './teacher-routing';
+import { BackendAccessService } from './services/backend-access.service';
 
 
 @NgModule({
   imports: [
     CommonModule,
+    RouterModule.forRoot(routes)
+  ],
+  declarations: [
+    IndexComponent,
     DocumentsComponent,
     LanguagesComponent,
     NotificationsComponent,
     ProfileComponent,
     PublicationComponent,
-    SearchComponent,
-    RouterModule.forRoot(routes)
-  ],
-  declarations: [IndexComponent]
+    SearchComponent
+   ],
+   providers : [
+     BackendAccessService
+   ]
 })
 export class TeacherModule { }
