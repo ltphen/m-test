@@ -1,4 +1,9 @@
 import { Component } from '@angular/core';
+import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+
+import { AuthService } from './shared/services/auth.service';
+
+import 'rxjs/add/operator/switchMap';
 
 @Component({
   selector: 'app-root',
@@ -12,10 +17,25 @@ import { Component } from '@angular/core';
 */
 export class AppComponent {
 
-  title = 'MendoLearn';
+  constructor(
+  	private route: ActivatedRoute,
+  	private router: Router,
+  	private auth : AuthService
+  ){
+  	this.init();
 
-  constructor(){
   }
+  /************************Initial configuration and path redirecter ******************************************/
+
+  private init () : void{
+  	if (this.auth.isLogin()) {
+  		let account = this.auth.accountType(this.auth.credentials().email);
+  	 	this.router.navigate(['/s/home']);
+  	}else{
+  		this.router.navigate(['/account/home']);	
+  	}
+  }
+
 
 
 }

@@ -223,7 +223,7 @@ export class BackendAccessService {
 	  				link = (urlParams == undefined) ? link  : link + "?" + urlParams;
 
   					that.request.post(link, data).subscribe(function(result){
-	  					resolve(result.json());
+	  					resolve(result);
 	  				})	
   				});
   				

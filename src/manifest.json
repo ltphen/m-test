@@ -1,0 +1,23 @@
+{
+  "short_name": "Mendolearn",
+  "name": "Mendolearn",
+  "start_url": "index.html",
+  "lang": "fr",
+  "display": "standalone",
+  "orientation": "portrait",
+  "theme_color": "#3fb561",
+  "background_color": "#fff",
+  "mime": "application/manifest+json",
+  "icons": [
+    {
+      "src": "images/icons/icon.png",
+      "sizes": "48x48",
+      "type": "image/png"
+    },
+    {
+      "src": "images/icons/icon.png",
+      "sizes": "196x196",
+      "type": "image/png"
+    }
+  ]
+}

@@ -1,3 +1,19 @@
-<p>
-  sign-in works!
-</p>
+<main class="form-container">
+    <img src="./assets/ml1.png" alt="brand" />
+    <h1>mendo<span class="green">learn</span>
+    </h1>
+    <form action="" method="post">
+      <span>{{ ErrorMessage }}</span>
+      <div class="field">
+        <input type="text" name="" placeholder="Email adress" #email/>
+      </div>
+      <div class="field">
+        <input type="password" name="" placeholder="Password" #password/>
+      </div>
+      <button type="button" name="button" (click) = "login(email.value, password.value)">login </button>
+    </form>
+    <section class="actions">
+      <a class="action" routerLink="/account/forgotPassword">Mot de passe oublié?</a>
+      <a class="action green" routerLink="/account/signUp">Vous n'avez pas de compte? </a>
+    </section>
+  </main>

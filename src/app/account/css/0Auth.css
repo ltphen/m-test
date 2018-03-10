@@ -1,0 +1,173 @@
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+}
+::-moz-selection {
+  background: rgba(63, 181, 97, 0.9);
+  color: #fff;
+}
+::selection {
+  background: rgba(63, 181, 97, 0.9);
+  color: #fff;
+}
+a {
+  text-decoration: none;
+}
+.form-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+}
+.form-container h1 {
+  font-size: 3rem;
+  margin: 16px 0;
+  padding: 0;
+  line-height: 1;
+  color: #000;
+}
+.form-container h1 .green {
+  color: #3fb561;
+}
+.form-container .description {
+  text-align: center;
+  margin-bottom: 1em;
+  color: rgba(0, 0, 0, 0.6);
+}
+.form-container .alert {
+  margin: 0 0 12px;
+  padding: 8px 16px;
+  border-radius: 28px;
+  line-height: 1;
+}
+.form-container .alert.alert-error {
+  background-color: #ff9494;
+}
+.form-container .alert.alert-error i {
+  margin-left: 12px;
+  font-size: 1.16rem;
+  color: rgba(0, 0, 0, 0.38);
+}
+.form-container form {
+  width: 100%;
+}
+.form-container form .field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 16px;
+  width: inherit;
+}
+.form-container form .field input.error {
+  border: 1px solid #ff9494;
+  box-shadow: 0 0 2px 2px #ff9494;
+}
+.form-container form .field input:focus {
+  border: 1px solid rgba(63, 181, 97, 0.13);
+}
+.form-container form .field input:not([type="checkbox"]) {
+  width: 100%;
+  padding: 12px 16px;
+  border-radius: 24px;
+  border: 1px solid #95989a;
+  color: #000;
+  outline: none;
+  font-size: 1em;
+}
+.form-container form .field input:not([type="checkbox"]):focus {
+  border: 1px solid #3fb561;
+}
+.form-container form .field label {
+  font-size: 0.75em;
+}
+.form-container form .field a {
+  text-align: right;
+  color: rgba(63, 181, 97, 0.9);
+}
+.form-container form .field.forgot {
+  justify-content: flex-end;
+}
+.form-container form .inline-field {
+  width: inherit;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 16px;
+}
+.form-container form .inline-field a {
+  text-align: right;
+  color: rgba(63, 181, 97, 0.9);
+}
+.form-container form .inline-field label {
+  font-size: 0.875em;
+  margin-left: 0.5em;
+}
+.form-container form .inline-field input:focus {
+  border: 1px solid rgba(63, 181, 97, 0.13);
+}
+.form-container form .inline-field input:not([type="checkbox"]) {
+  width: 100%;
+  padding: 12px 16px;
+  border-radius: 24px;
+  border: 1px solid #95989a;
+  color: #000;
+  outline: none;
+  font-size: 1em;
+}
+.form-container form .inline-field input:not([type="checkbox"]):focus {
+  border: 1px solid #3fb561;
+}
+.form-container form .inline-field .forgot-btn {
+  position: relative;
+  width: 44px;
+  height: 44px;
+  margin-left: 0.33333em;
+  font-size: 1.5em;
+  border-radius: 50%;
+  text-indent: -1px;
+}
+.form-container form .inline-field .forgot-btn i {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 58%;
+  transform: translate(-50%, -50%);
+}
+.form-container form button {
+  width: 100%;
+  padding: 12px 16px;
+  outline: none;
+  border: none;
+  border-radius: 24px;
+  background-color: #3fb561;
+  color: #fff;
+  text-transform: capitalize;
+  font-size: 1em;
+  display: block;
+  margin: 0 auto;
+}
+.form-container .actions {
+  margin-top: 1.25em;
+}
+.form-container .actions .action {
+  display: block;
+  text-align: center;
+  margin-top: 1em;
+  color: #95989a;
+  font-size: 0.875em;
+}
+.form-container .actions .action:first-child {
+  margin-top: 0;
+}
+.form-container .actions .action.green {
+  color: #3fb561;
+}

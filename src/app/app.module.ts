@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
 import { ErrorHandler } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
@@ -18,6 +18,8 @@ import { WorksessionModule } from './worksession/worksession.module';
 import { AccountModule } from './account/account.module';
 
 import { RequestService } from './shared/services/request.service';
+import { AuthService } from './shared/services/auth.service';
+import { ErrorMessagesService } from './shared/services/errorMessages.service';
 
 
 @NgModule({
@@ -29,7 +31,7 @@ import { RequestService } from './shared/services/request.service';
   ],
   imports: [
     BrowserModule,
-    HttpModule,
+    HttpClientModule,
     StudentModule,
     TeacherModule,
     WorksessionModule,
@@ -38,6 +40,8 @@ import { RequestService } from './shared/services/request.service';
   ],
   providers: [
     RequestService,
+    AuthService,
+    ErrorMessagesService,
     {provide : ErrorHandler, useClass : AppErrorHandler},
 
   ],

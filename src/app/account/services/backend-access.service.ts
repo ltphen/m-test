@@ -25,6 +25,20 @@ export class BackendAccessService {
 
 	private AccessToken = "ZR32UPxRNYLAi3q0BqeY_Bp2Z3NpcezV";
 
+	// account type
+
+	public accountType = {
+		student : 'student',
+		teacher : 'teacher'
+	};
+
+	// request status 
+
+	public status = {
+		success : 'success',
+		error : 'error'
+	};
+
  /********************************* Back end access services for account ***************************************************************************/
 
   constructor(private request : RequestService) {
@@ -78,7 +92,7 @@ export class BackendAccessService {
   			this.functions[links] = function (data, urlParams) {
   				return new Promise(function (resolve, reject) {
   		
-	  				link = (urlParams == undefined) ? link  : link + "?" + urlParams;
+	  				link = (urlParams == undefined) ? link  : link + "&" + urlParams;
 
   					that.request.post(link, data).subscribe(function(result){
 	  					resolve(result.json());
@@ -90,5 +104,13 @@ export class BackendAccessService {
   	}
   }
 
+ /********************************* Account type getter ***************************************************************************/
+ /*
+ * @params { String } accountType the account type ( teacher, student)
+ * @params { String } action the action function to return ( login )
+ */
+ getAccountAction(accountType, action){
+ 	return this.functions[action + accountType.charAt(0).toUpperCase() + accountType.slice(1)]
+ }
 
 }

@@ -5,32 +5,25 @@ import { HomeComponent } from './components/home/home.component';
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 
 export const routes : Routes = [
-	{
-		path : "account",
-		component : HomeComponent,
-		children : [
-			{
-				path : 'home',
-				component : HomeComponent
-			},
-			{
-				path : 'signIn',
-				component : SignInComponent
-			},
+		{
+			path : 'account/home',
+			component : HomeComponent
+		},
+		{
+			path : 'account/signIn',
+			component : SignInComponent
+		},
 
-			{
-				path : 'signUp',
-				component : SignUpComponent
-			},
-			
-			{
-				path : 'forgotPassword',
-				component : ForgotPasswordComponent
-			}
-		]
-	},
-	
-
+		{
+			path : 'account/signUp',
+			component : SignUpComponent
+		},
+		
+		{
+			path : 'account/forgotPassword',
+			component : ForgotPasswordComponent
+		}
+		
 ];
 
 
