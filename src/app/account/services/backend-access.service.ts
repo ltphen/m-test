@@ -23,7 +23,7 @@ export class BackendAccessService {
 
 	// access token ... from backend
 
-	private AccessToken = "ZR32UPxRNYLAi3q0BqeY_Bp2Z3NpcezV";
+	private AccessToken = "EtrYWRBY5OQDyeTgnaxct6_swqzmUyFo";
 
 	// account type
 
@@ -56,14 +56,14 @@ export class BackendAccessService {
 	  		// account actions
 
 	  		"student" : {
-				"createStudentAccount" : this.RESSOURCESTUDENT +  "index.php/user/create?access-token=" + this.AccessToken,
-				"loginStudent" : this.RESSOURCESTUDENT +  "index.php/user/login?access-token=" + this.AccessToken,
-				"logoutStudent" : this.RESSOURCESTUDENT +  "index.php/user/logout?access-token=" + this.AccessToken,
+				"registerStudent" : this.RESSOURCESTUDENT +  "/user/create?access-token=" + this.AccessToken,
+				"loginStudent" : this.RESSOURCESTUDENT +  "/user/login?access-token=" + this.AccessToken,
+				"logoutStudent" : this.RESSOURCESTUDENT +  "/user/logout?access-token=" + this.AccessToken,
 			},
 			"teacher" : {
-				"createTeacherAccount" : this.RESSOURCESTUDENT +  "index.php/user/create?access-token=" + this.AccessToken,
-				"loginTeacher" : this.RESSOURCESTUDENT +  "index.php/user/login?access-token=" + this.AccessToken,
-				"logoutTeacher" : this.RESSOURCESTUDENT +  "index.php/user/logout?access-token=" + this.AccessToken,
+				"registerTeacher" : this.RESSOURCESTUDENT +  "/user/create?access-token=" + this.AccessToken,
+				"loginTeacher" : this.RESSOURCESTUDENT +  "/user/login?access-token=" + this.AccessToken,
+				"logoutTeacher" : this.RESSOURCESTUDENT +  "/user/logout?access-token=" + this.AccessToken,
 
 			},
 			"general" : {
@@ -84,9 +84,9 @@ export class BackendAccessService {
   			let link = modules[links];
 
   			/*
-  			* @params data Object the post data
-  			* @params fn Function the callback function
-  			* @params urlParams String the url add parameters
+  			* @params { Object }data  the post data
+  			* @params { Function } fn  the callback function
+  			* @params { String } urlParams  the url add parameters
   			*/
 
   			this.functions[links] = function (data, urlParams) {
@@ -95,7 +95,7 @@ export class BackendAccessService {
 	  				link = (urlParams == undefined) ? link  : link + "&" + urlParams;
 
   					that.request.post(link, data).subscribe(function(result){
-	  					resolve(result.json());
+	  					resolve(result);
 	  				})	
   				});
   				

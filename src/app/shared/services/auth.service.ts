@@ -13,7 +13,7 @@ export class AuthService {
   
   // access token ... the default for initial request
 
-  private AccessToken = "ZR32UPxRNYLAi3q0BqeY_Bp2Z3NpcezV";
+  private AccessToken = "EtrYWRBY5OQDyeTgnaxct6_swqzmUyFo";
 
   constructor(private request : RequestService) { }
 
