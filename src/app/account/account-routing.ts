@@ -7,21 +7,28 @@ import { ForgotPasswordComponent } from './components/forgot-password/forgot-pas
 export const routes : Routes = [
 		{
 			path : 'account/home',
-			component : HomeComponent
+			component : HomeComponent,
+			data: { animation: 'accountHome' }
 		},
 		{
 			path : 'account/signIn',
-			component : SignInComponent
+			component : SignInComponent,
+			data: { animation: 'accountLogin' }
+
 		},
 
 		{
 			path : 'account/signUp',
-			component : SignUpComponent
+			component : SignUpComponent,
+			data: { animation: 'accountRegister' }
+
 		},
 		
 		{
 			path : 'account/forgotPassword',
-			component : ForgotPasswordComponent
+			component : ForgotPasswordComponent,
+			data: { animation: 'accountForgotpassword' }
+
 		}
 		
 ];

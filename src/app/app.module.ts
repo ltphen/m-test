@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { ErrorHandler } from '@angular/core';
 import { RouterModule } from '@angular/router';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
 import { AppErrorHandler } from './shared/common/ErrorsHandler/AppErrorHandler';
@@ -25,12 +25,10 @@ import { ErrorMessagesService } from './shared/services/errorMessages.service';
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
-    NavbarComponent,
-    CardProfileComponent
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     HttpClientModule,
     StudentModule,
     TeacherModule,

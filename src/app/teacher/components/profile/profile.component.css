@@ -1,0 +1,66 @@
+.profile {
+  min-height: 8.1875em;
+  height: 8.1875em;
+  padding: 1em 0 .75em
+}
+
+.profile.teacher .profile-image {
+  height: 100%;
+  display: flex;
+  align-items: center
+}
+
+.profile.teacher .profile-image img {
+  height: 3.5em;
+  width: 3.5em;
+  margin: 0 16px;
+  border-radius: 50%;
+  border: 1px solid #3fb561;
+  background-color: #000
+}
+
+.profile.teacher .profile-infos {
+  font-weight: normal
+}
+
+.profile.teacher .profile-infos .teacherName {
+  font-size: 1.5em;
+  margin: 0;
+  margin-bottom: 4px
+}
+
+.profile.teacher .profile-infos .teacherLesson {
+  font-size: 1.25em;
+  color: #3fb561;
+  margin: 0;
+  margin-bottom: 4px
+}
+
+.profile.teacher .profile-infos .location {
+  font-size: 1em;
+  color: #95989A;
+  margin: 0;
+  margin-bottom: 4px
+}
+
+.profile.teacher .profile-infos .teachAt span {
+  display: inline-block;
+  font-size: 12px;
+  margin-bottom: 4px
+}
+
+.profile.teacher .profile-infos .teachAt .schools img {
+  height: 2em;
+  width: 2em;
+  margin: 0 4px;
+  border: 1px solid #3fb561;
+  border-radius: 50%
+}
+
+.profile.teacher .profile-infos .teachAt .schools img:first-child {
+  margin-left: 0px
+}
+
+.profile.teacher .profile-infos .teachAt .schools img:last-child {
+  margin-right: 0px
+}

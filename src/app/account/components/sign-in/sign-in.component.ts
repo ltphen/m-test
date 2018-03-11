@@ -22,28 +22,32 @@ export class SignInComponent implements OnInit {
   }
 
   /**********************Login function ******************************************/
+  /*
+	* @params { String } email  the email from the form
+	* @params { String } password  the password from the form
+	*/
 
   public login(email, password){
-	console.log(email, password);
-	this.notifier = 'loading';
-	let that = this;
-	this.service.functions["email"](null, 'email='+email).then( (data) => {
-		if (data.status == that.service.status.success) {
-			that.service.getAccountAction(data.data, 'login')({
-				email : email,
-				password : password
-			}).then((response) => {
-				this.notifier = '';
-				if (response.status == that.service.status.success) {
-					alert("Good log in");
-				}else{
-					this.notifier = this.messages.factory.loginError;
-				}
-			})
-		} else{
-			this.notifier = this.messages.factory.loginError;
-		}
-		
-	})
+		console.log(email, password);
+		this.notifier = 'loading';
+		let that = this;
+		this.service.functions["email"](null, 'email='+email).then( (data) => {
+			if (data.status == that.service.status.success) {
+				that.service.getAccountAction(data.data, 'login')({
+					email : email,
+					password : password
+				}).then((response) => {
+					this.notifier = '';
+					if (response.status == that.service.status.success) {
+						alert("Good log in");
+					}else{
+						this.notifier = this.messages.factory.loginError;
+					}
+				})
+			} else{
+				this.notifier = this.messages.factory.loginError;
+			}
+			
+		})
   }
 }

@@ -1,3 +1,10 @@
-<p>
-  card-profile works!
-</p>
+<div class="card">
+        <div class="card-image"><img src="{{publication.image}}" alt="" /></div>
+        <div class="card-header">
+          <h3 class="card-title">{{ publication.title }}</h3><a class="card-option" href="#"><i class="ion-ios-arrow-down"></i></a></div>
+        <div class="card-content">
+          <p></p>{{ publication.content }}</div>
+        <div class="card-user"><a class="primary-content" routerLink="/t/profile"><img src="{{publication.poster_image}}" alt=""/><div><h5>{{ publication.poster_name }}</h5><span class="time">{{publication.time}}</span><span>8 min de lecture</span></div></a>
+          <div class="card-action"><a href="#"><i class="ion-android-send"></i></a></div>
+        </div>
+</div>

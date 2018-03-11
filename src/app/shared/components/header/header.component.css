@@ -1,0 +1,145 @@
+header, section, footer {
+  width: 100vw;
+  height: 100vh
+}
+
+header {
+  position: fixed;
+  top: 0;
+  z-index: 100;
+  width: 100%;
+  max-height: 48px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.13)
+}
+
+header .tabs {
+  border-bottom: none
+}
+
+.navbar, .profile, .profile-image, form {
+  display: flex
+}
+
+nav {
+  display: block;
+  background-color: #fff;
+  height: 48px
+}
+
+nav .navbar {
+  height: 100%;
+  padding: 0 16px;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between
+}
+
+nav .navbar .brand {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #000
+}
+
+nav .navbar .brand .green {
+  color: #3fb561
+}
+
+nav .navbar .right {
+  display: inherit;
+  align-items: center
+}
+
+nav .navbar .right img {
+  width: 36px;
+  height: 36px;
+  background-color: #000;
+  border-radius: 50%;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%)
+}
+
+nav .navbar .right a {
+  display: inline-block;
+  margin: 0 4px;
+  color: #000;
+  line-height: 48px;
+  width: 48px;
+  text-align: center
+}
+
+nav .navbar .right a i {
+  font-size: 1.5rem
+}
+
+nav .navbar .right a:last-child {
+  margin-right: 0
+}
+
+nav .navbar .right a.active {
+  color: #3fb561
+}
+
+nav .navbar .right #settingsBtn {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  position: relative;
+  padding: 2px;
+  border: 1px solid rgba(63, 181, 97, 0.9)
+}
+
+nav .navbar .right #settingsBtn:focus {
+  outline: none
+}
+
+.settingsModal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 160;
+  display: none;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center
+}
+
+.settingsModal .settings {
+  width: 75vw;
+  height: auto;
+  margin: 0 auto;
+  background-color: #fff
+}
+
+.settingsModal .settings li {
+  overflow-x: hidden
+}
+
+.settingsModal .settings a {
+  display: inline-block;
+  width: 100%;
+  padding: 8px 16px;
+  font-size: .86rem;
+  color: #000
+}
+
+.settingsModal .settings a:focus {
+  color: #18ec54;
+  background-color: rgba(0, 0, 0, 0.05)
+}
+
+.settingsModal .settings a i {
+  margin-right: 8px;
+  font-size: 1.3rem
+}
+
+.settingsModal .settings li.logout a {
+  color: crimson;
+  background-color: rgba(63, 181, 97, 0.13);
+  border-top: 1px solid rgba(0, 0, 0, 0.13)
+}

@@ -6,5 +6,6 @@
   
     <span><a routerLink="/s/home" >Student</a></span>
 
-
-  <router-outlet></router-outlet>
+<div [@routerAnimation]="getRouteAnimation(route)">
+  <router-outlet #route="outlet"></router-outlet>
+</div>

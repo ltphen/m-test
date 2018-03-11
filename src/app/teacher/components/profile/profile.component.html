@@ -1,3 +1,25 @@
-<p>
-  profile works!
-</p>
+<main>
+    <div class="wrapper">
+      <section class="profile teacher">
+        <div class="profile-image"><img src="./../../../../assets/images/01.jpg" /></div>
+        <div class="profile-infos">
+          <h3 class="teacherName">Elon Musk</h3>
+          <h4 class="teacherLesson">#Physique</h4>
+          <p class="location">Nkolfoulou, Yaoundé</p>
+          <div class="teachAt"><span>Enseigne à:</span>
+            <div class="schools"><img src="./../../../../assets/images/01.jpg" /><img src="./../../../../assets/images/02.jpg" /><img src="./../../../../assets/images/03.jpg" /></div>
+          </div>
+        </div>
+      </section>
+      <section class="tabs">
+        <div class="tab active"> <a class="stats" href="#"><span class="num">137</span><span class="text">Publications</span></a></div>
+        <div class="tab"><a class="stats" href="#"><span class="num">76</span><span class="text">Collaborations</span></a></div>
+        <div class="tab"><a class="stats" href="#"><span class="num">04</span><span class="text">Groupes</span></a></div>
+        <div class="tab"><a class="stats" href="#"><span class="num">39</span><span class="text">Documents</span></a></div>
+		</section>
+
+		<div class="wrapper" *ngFor="let publication of publications">
+			<app-card-profile [publication] = "publication"></app-card-profile>
+		</div>
+	</div>
+</main>

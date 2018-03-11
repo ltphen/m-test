@@ -1,3 +1,5 @@
-<p>
-  publication works!
-</p>
+<main>
+	<div class="wrapper" *ngFor="let publication of publications">
+		<app-card-profile [publication] = "publication"></app-card-profile>
+	</div>
+</main>
