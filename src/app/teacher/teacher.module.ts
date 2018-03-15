@@ -15,6 +15,9 @@ import { CardProfileComponent } from './../shared/components/card-profile/card-p
 
 import { routes } from './teacher-routing';
 import { BackendAccessService } from './services/backend-access.service';
+import { LoginGuard } from './../shared/guards/login.guard';
+import { CollaborationsComponent } from './components/collaborations/collaborations.component';
+import { StudentComponent } from './components/student/student.component';
 
 
 @NgModule({
@@ -32,10 +35,13 @@ import { BackendAccessService } from './services/backend-access.service';
     NotificationsComponent,
     ProfileComponent,
     PublicationComponent,
-    SearchComponent
+    SearchComponent,
+    CollaborationsComponent,
+    StudentComponent
    ],
    providers : [
-     BackendAccessService
+     BackendAccessService,
+     LoginGuard,
    ]
 })
 export class TeacherModule { }

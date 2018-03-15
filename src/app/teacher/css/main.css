@@ -63,6 +63,103 @@ main {
   padding: 0
 }
 
+header, section, footer {
+  width: 100vw;
+  height: 100vh
+}
+
+header {
+  position: fixed;
+  top: 0;
+  z-index: 100;
+  width: 100%;
+  max-height: 48px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.13)
+}
+
+header .tabs {
+  border-bottom: none
+}
+
+.navbar, .profile, .profile-image, form {
+  display: flex
+}
+
+nav {
+  display: block;
+  background-color: #fff;
+  height: 48px
+}
+
+nav .navbar {
+  height: 100%;
+  padding: 0 16px;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between
+}
+
+nav .navbar .brand {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #000
+}
+
+nav .navbar .brand .green {
+  color: #3fb561
+}
+
+nav .navbar .right {
+  display: inherit;
+  align-items: center
+}
+
+nav .navbar .right img {
+  width: 36px;
+  height: 36px;
+  background-color: #000;
+  border-radius: 50%;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%)
+}
+
+nav .navbar .right a {
+  display: inline-block;
+  margin: 0 4px;
+  color: #000;
+  line-height: 48px;
+  width: 48px;
+  text-align: center
+}
+
+nav .navbar .right a i {
+  font-size: 1.5rem
+}
+
+nav .navbar .right a:last-child {
+  margin-right: 0
+}
+
+nav .navbar .right a.active {
+  color: #3fb561
+}
+
+nav .navbar .right #settingsBtn {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  position: relative;
+  padding: 2px;
+  border: 1px solid rgba(63, 181, 97, 0.9)
+}
+
+nav .navbar .right #settingsBtn:focus {
+  outline: none
+}
+
 nav form {
   width: 100%;
   height: 100%;
@@ -241,6 +338,218 @@ nav.tabbar a:focus {
   transition: box-shadow .25s
 }
 
+.card {
+  position: relative;
+  margin: .5rem 0 1rem 0;
+  background-color: #fff;
+  border-radius: 2px;
+  box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.38);
+  transition: box-shadow .25s
+}
+
+.card:first-child {
+  margin-top: 0
+}
+
+.card .card-user {
+  display: flex;
+  height: 50px;
+  padding: 8px 16px;
+  margin: 4px 0;
+  flex-direction: row;
+  align-items: center
+}
+
+.card .card-user .primary-content {
+  display: inherit;
+  width: 90%;
+  flex-direction: row;
+  align-items: center
+}
+
+.card .card-user .primary-content img {
+  width: 36px;
+  height: 36px;
+  margin-right: 16px;
+  border-radius: 50%
+}
+
+.card .card-user .primary-content h5 {
+  display: block;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  color: rgba(0, 0, 0, 0.9);
+  text-overflow: ellipsis;
+  white-space: nowrap
+}
+
+.card .card-user .primary-content span {
+  font-size: 12px;
+  color: rgba(0, 0, 0, 0.3)
+}
+
+.card .card-user .primary-content .time::after {
+  margin-left: 4px;
+  font-size: 16px;
+  content: '•'
+}
+
+.card .card-user .card-action {
+  display: inherit;
+  height: 30px;
+  padding: 0;
+  margin-left: 16px;
+  font-size: 24px;
+  line-height: 28px;
+  color: rgba(0, 0, 0, 0.9);
+  text-align: center;
+  border: none
+}
+
+.card .card-user .card-action a {
+  padding: 0
+}
+
+.card .card-image {
+  position: relative
+}
+
+.card .card-image img {
+  position: relative;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 2px 2px 0 0
+}
+
+.card .card-header {
+  display: flex;
+  padding: 0 16px;
+  flex-direction: row;
+  align-items: center
+}
+
+.card .card-header .card-title {
+  display: inline-block;
+  width: 90%;
+  margin: 0;
+  font-size: 1.6rem;
+  font-weight: bold;
+  line-height: normal
+}
+
+.card .card-header .card-option {
+  display: inherit;
+  padding: 0;
+  margin-left: 16px;
+  font-size: 24px;
+  line-height: 28px;
+  color: rgba(0, 0, 0, 0.3);
+  text-align: center;
+  border: none
+}
+
+.card .card-header .card-option {
+  padding: 0
+}
+
+.card .card-content {
+  font-size: .875em;
+  padding: 16px;
+  border-radius: 0 0 2px 2px
+}
+
+.card .card-content .card-title {
+  display: block;
+  width: 90%;
+  margin: 0;
+  margin-bottom: 8px;
+  font-size: 1.6rem;
+  font-weight: bold;
+  line-height: 32px
+}
+
+.card .card-content .card-title i {
+  line-height: 32px
+}
+
+.card .card-content p {
+  padding: 0;
+  margin: 0;
+  color: inherit
+}
+
+.card .card-action {
+  position: relative;
+  padding: 4px 16px;
+  background-color: inherit;
+  border-top: 1px solid rgba(160, 160, 160, 0.2)
+}
+
+.card .card-action a {
+  padding: 0 8px;
+  font-size: 28px;
+  color: rgba(0, 0, 0, 0.9)
+}
+
+.card .card-action a:first-child {
+  padding-left: 0
+}
+
+.settingsModal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 160;
+  display: none;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center
+}
+
+.settingsModal .settings {
+  width: 75vw;
+  height: auto;
+  margin: 0 auto;
+  background-color: #fff
+}
+
+.settingsModal .settings li {
+  overflow-x: hidden
+}
+
+.settingsModal .settings a {
+  display: inline-block;
+  width: 100%;
+  padding: 8px 16px;
+  font-size: .86rem;
+  color: #000
+}
+
+.settingsModal .settings a:focus {
+  color: #18ec54;
+  background-color: rgba(0, 0, 0, 0.05)
+}
+
+.settingsModal .settings a i {
+  margin-right: 8px;
+  font-size: 1.3rem
+}
+
+.settingsModal .settings li.logout a {
+  color: crimson;
+  background-color: rgba(63, 181, 97, 0.13);
+  border-top: 1px solid rgba(0, 0, 0, 0.13)
+}
+
 .notifsComponent {
   position: fixed;
   top: 0;
@@ -253,3 +562,69 @@ nav.tabbar a:focus {
   background-color: rgba(0, 0, 0, 0.5)
 }
 
+.profile {
+  min-height: 8.1875em;
+  height: 8.1875em;
+  padding: 1em 0 .75em
+}
+
+.profile.teacher .profile-image {
+  height: 100%;
+  display: flex;
+  align-items: center
+}
+
+.profile.teacher .profile-image img {
+  height: 3.5em;
+  width: 3.5em;
+  margin: 0 16px;
+  border-radius: 50%;
+  border: 1px solid #3fb561;
+  background-color: #000
+}
+
+.profile.teacher .profile-infos {
+  font-weight: normal
+}
+
+.profile.teacher .profile-infos .teacherName {
+  font-size: 1.5em;
+  margin: 0;
+  margin-bottom: 4px
+}
+
+.profile.teacher .profile-infos .teacherLesson {
+  font-size: 1.25em;
+  color: #3fb561;
+  margin: 0;
+  margin-bottom: 4px
+}
+
+.profile.teacher .profile-infos .location {
+  font-size: 1em;
+  color: #95989A;
+  margin: 0;
+  margin-bottom: 4px
+}
+
+.profile.teacher .profile-infos .teachAt span {
+  display: inline-block;
+  font-size: 12px;
+  margin-bottom: 4px
+}
+
+.profile.teacher .profile-infos .teachAt .schools img {
+  height: 2em;
+  width: 2em;
+  margin: 0 4px;
+  border: 1px solid #3fb561;
+  border-radius: 50%
+}
+
+.profile.teacher .profile-infos .teachAt .schools img:first-child {
+  margin-left: 0px
+}
+
+.profile.teacher .profile-infos .teachAt .schools img:last-child {
+  margin-right: 0px
+}

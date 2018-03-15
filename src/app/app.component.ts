@@ -67,8 +67,8 @@ export class AppComponent {
 
   private init () : void{
   	if (this.auth.isLogin()) {
-  		let account = this.auth.accountType(this.auth.credentials().email);
-  	 	this.router.navigate(['/s/home']);
+  		let account = this.auth.accountType(this.auth.credentials().session_id);
+  	 	this.router.navigate(['/t/home']);
   	}else{
   		this.router.navigate(['/account/home']);	
   	}

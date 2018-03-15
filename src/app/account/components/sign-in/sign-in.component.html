@@ -3,7 +3,7 @@
     <h1>mendo<span class="green">learn</span>
       
     </h1>
-    <span class="alert alert-error"> {{ notifier }} <i class="ion-ios-close"></i></span>
+    <span class="alert alert-error" [hidden]="notifier == ''"> {{ notifier }} <i class="ion-ios-close"></i></span>
     <form action="" method="post">
       
       <div class="field">

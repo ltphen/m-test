@@ -36,6 +36,7 @@ a {
   padding: 0;
   line-height: 1;
   color: #000;
+  font-weight: bold;
 }
 .form-container h1 .green {
   color: #3fb561;

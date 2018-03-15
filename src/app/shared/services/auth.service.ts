@@ -19,7 +19,7 @@ export class AuthService {
 
  /********************************* To know if i'm login ***************************************************************************/
  public isLogin(){
-   return localStorage.getItem("access-token") != null;
+   return localStorage.getItem("loginData") != null;
  }
 
  /********************************* To switch between different account ***************************************************************************/
@@ -31,10 +31,13 @@ export class AuthService {
  /********************************* To get saved credentials ***************************************************************************/
 
   public credentials(){
-    return {
-      email : localStorage.getItem("email"),
-      accessToken : localStorage.getItem("access-token")
-    };
+    return JSON.parse(localStorage.getItem('loginData'));
+  } 
+
+ /********************************* To save credentials ***************************************************************************/
+
+  public saveCredentials(loginData){
+    localStorage.setItem('loginData', JSON.stringify(loginData));
   } 
 
   

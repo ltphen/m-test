@@ -1,9 +1,9 @@
 <main>
     <div class="wrapper">
       <section class="profile teacher">
-        <div class="profile-image"><img src="./../../../../assets/images/01.jpg" /></div>
+        <div class="profile-image"><img src="{{ url + profile.photo }}" /></div>
         <div class="profile-infos">
-          <h3 class="teacherName">Elon Musk</h3>
+          <h3 class="teacherName">{{ profile.nom + " " + profile.prenom }}</h3>
           <h4 class="teacherLesson">#Physique</h4>
           <p class="location">Nkolfoulou, Yaoundé</p>
           <div class="teachAt"><span>Enseigne à:</span>
@@ -12,14 +12,14 @@
         </div>
       </section>
       <section class="tabs">
-        <div class="tab active"> <a class="stats" href="#"><span class="num">137</span><span class="text">Publications</span></a></div>
-        <div class="tab"><a class="stats" href="#"><span class="num">76</span><span class="text">Collaborations</span></a></div>
+        <div class="tab active"> <a class="stats" href="#"><span class="num">{{ publications.length }}</span><span class="text">Publications</span></a></div>
+        <div class="tab"><a class="stats" href="#"><span class="num">{{ profile.collaborator }}</span><span class="text">Collaborations</span></a></div>
         <div class="tab"><a class="stats" href="#"><span class="num">04</span><span class="text">Groupes</span></a></div>
-        <div class="tab"><a class="stats" href="#"><span class="num">39</span><span class="text">Documents</span></a></div>
+        <div class="tab"><a class="stats" href="#"><span class="num">{{ (profile.fichePeda + profile.ficheProg + profile.cours + profile.td + profile.epreuves)  }}</span><span class="text">Documents</span></a></div>
 		</section>
 
 		<div class="wrapper" *ngFor="let publication of publications">
-			<app-card-profile [publication] = "publication"></app-card-profile>
+			<app-card-profile [publication] = "publication" [url] = "url"></app-card-profile>
 		</div>
 	</div>
 </main>

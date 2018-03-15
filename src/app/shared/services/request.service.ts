@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from "rxjs/Observable";
 import { catchError, retry } from 'rxjs/operators';
 import { ErrorObservable } from 'rxjs/observable/ErrorObservable';
@@ -9,6 +9,14 @@ import { AppError } from "./../common/ErrorsHandler/AppError";
 import { BadRequestError } from "./../common/ErrorsHandler/BadRequestError";
 import { ServerInternalError } from "./../common/ErrorsHandler/ServerInternalError";
 import { UnauthorizedError } from "./../common/ErrorsHandler/UnauthorizedError";
+
+// configuration for properly post data to the server 
+
+const httpOptions = {
+  headers: new HttpHeaders({
+    'Content-Type':  'application/x-www-form-urlencoded',
+  })
+};
 
 @Injectable()
 
@@ -23,7 +31,7 @@ export class RequestService {
 
    /********************************* Post request ***************************************************************************/
   post(url, data){
-  	return this.httpc.post(url, data).pipe(retry(this.retry), catchError(this.handleError));
+  	return this.httpc.post(url, data, httpOptions).pipe(retry(this.retry), catchError(this.handleError));
   }
 
  /********************************* Get request ***************************************************************************/

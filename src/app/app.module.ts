@@ -34,7 +34,14 @@ import { ErrorMessagesService } from './shared/services/errorMessages.service';
     TeacherModule,
     WorksessionModule,
     AccountModule,
-    RouterModule
+    RouterModule.forRoot([
+     {
+        path : '**', component : AppComponent,
+     },
+     {
+        path : '', component : AppComponent,
+     }
+    ])
   ],
   providers: [
     RequestService,

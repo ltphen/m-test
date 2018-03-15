@@ -23,7 +23,9 @@ export class BackendAccessService {
 
 	// access token ... from backend
 
-	private AccessToken = "EtrYWRBY5OQDyeTgnaxct6_swqzmUyFo";
+	private AccessTokenStudent = "EtrYWRBY5OQDyeTgnaxct6_swqzmUyFo";
+
+	private AccessTokenTeacher = "ZR32UPxRNYLAi3q0BqeY_Bp2Z3NpcezV";
 
 	// account type
 
@@ -56,18 +58,18 @@ export class BackendAccessService {
 	  		// account actions
 
 	  		"student" : {
-				"registerStudent" : this.RESSOURCESTUDENT +  "/user/create?access-token=" + this.AccessToken,
-				"loginStudent" : this.RESSOURCESTUDENT +  "/user/login?access-token=" + this.AccessToken,
-				"logoutStudent" : this.RESSOURCESTUDENT +  "/user/logout?access-token=" + this.AccessToken,
+				"registerStudent" : this.RESSOURCESTUDENT +  "/user/create?access-token=" + this.AccessTokenStudent,
+				"loginStudent" : this.RESSOURCESTUDENT +  "/user/login?access-token=" + this.AccessTokenStudent,
+				"logoutStudent" : this.RESSOURCESTUDENT +  "/user/logout?access-token=" + this.AccessTokenStudent,
 			},
 			"teacher" : {
-				"registerTeacher" : this.RESSOURCESTUDENT +  "/user/create?access-token=" + this.AccessToken,
-				"loginTeacher" : this.RESSOURCESTUDENT +  "/user/login?access-token=" + this.AccessToken,
-				"logoutTeacher" : this.RESSOURCESTUDENT +  "/user/logout?access-token=" + this.AccessToken,
+				"registerTeacher" : this.RESSOURCESTEACHER +  "/user/create?access-token=" + this.AccessTokenTeacher,
+				"loginTeacher" : this.RESSOURCESTEACHER +  "/user/login?access-token=" + this.AccessTokenTeacher,
+				"logoutTeacher" : this.RESSOURCESTEACHER +  "/user/logout?access-token=" + this.AccessTokenTeacher,
 
 			},
 			"general" : {
-				"email" : this.RESSOURCESTUDENT +"/user/if-email-exist?access-token=" + this.AccessToken,
+				"email" : this.RESSOURCESTUDENT +"/user/if-email-exist?access-token=" + this.AccessTokenStudent,
 			}
 
 

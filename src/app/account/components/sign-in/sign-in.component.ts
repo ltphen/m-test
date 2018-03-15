@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { BackendAccessService } from './../../services/backend-access.service';
 import { ErrorMessagesService } from './../../../shared/services/errorMessages.service';
+import { AuthService } from './../../../shared/services/auth.service';
 
 @Component({
   selector: 'app-sign-in',
@@ -16,7 +18,7 @@ export class SignInComponent implements OnInit {
 
   public notifier = "";
 
-  constructor(private service : BackendAccessService, private messages : ErrorMessagesService) { }
+  constructor(private service : BackendAccessService, private messages : ErrorMessagesService, private auth : AuthService, private route : Router) { }
 
   ngOnInit() {
   }
@@ -33,13 +35,11 @@ export class SignInComponent implements OnInit {
 		let that = this;
 		this.service.functions["email"](null, 'email='+email).then( (data) => {
 			if (data.status == that.service.status.success) {
-				that.service.getAccountAction(data.data, 'login')({
-					email : email,
-					password : password
-				}).then((response) => {
+				that.service.getAccountAction(data.data, 'login')("username="+ email+"&password="+ password ).then((response) => {
 					this.notifier = '';
 					if (response.status == that.service.status.success) {
-						alert("Good log in");
+						this.auth.saveCredentials(response);
+						this.redirect(data.data);
 					}else{
 						this.notifier = this.messages.factory.loginError;
 					}
@@ -49,5 +49,20 @@ export class SignInComponent implements OnInit {
 			}
 			
 		})
+  }
+  
+
+  /**********************Redicrecter function ******************************************/
+  	/*
+	* @params { String } accountType  the account type(student, teacher)
+	*/
+  // URGENT !!!!!!! remove static string after
+
+  public redirect(accountType){
+  	if (accountType == 'student') {
+  		this.route.navigate(['/s/home']);
+  	} else{
+  		this.route.navigate(['/t/home']);
+  	}
   }
 }

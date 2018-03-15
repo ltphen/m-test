@@ -1,13 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 
-interface publication {
-	title : string,
-	image : string,
-	content : string,
-	time : string,
-	poster_image : string,
-	poster_name : string,
-}
+
 
 
 
@@ -19,7 +12,8 @@ interface publication {
 
 export class CardProfileComponent implements OnInit {
 
-	@Input('publication') publication : publication;
+	@Input('publication') publication ;
+	@Input('url') url ;
 
   constructor() { }
 
