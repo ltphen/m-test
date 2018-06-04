@@ -15,7 +15,6 @@ export const routes : Routes = [
 	{
 		path : "t",
 		component : IndexComponent,
-		canActivate: [LoginGuard],
 		children : [
 
 			{
